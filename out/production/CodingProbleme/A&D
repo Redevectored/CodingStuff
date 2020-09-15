@@ -1,0 +1,24 @@
+downUpMerge(int[] arr) {
+    Int n = arr.length / 2;
+
+    Int[] sortedArr = new Array[arr.length];
+    for(int i = n - 1; i <=0; i--;) {
+        sortedArr[n - 1 - i] = arr[i];
+    }
+    for(int i = n; i < arr.length; i++) {
+        sortedArr[n + i] = arr[i];
+    }
+}
+
+Down 3 Up Array = {3, 2, 1, 4, 5, 6}
+SortedArray= {
+
+DownUpMerge(int[] arr) {
+    int n = arr.length/2;
+    int index1 = n;
+    int index2 = n+1;
+    int[] arr2 = new Array[arr.length];
+
+for (int i = 0; i < arr.length; i++) {
+    arr2[i] = Min(arr[index1], arr[index2]);
+    if (arr[index1] < arr[index2]) { index1--; } else { index2++; }
