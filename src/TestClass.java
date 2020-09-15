@@ -1,15 +1,24 @@
+import java.util.Arrays;
+
 public class TestClass {
 
-    int[] downUpMerge(int[] arr) {
+    public static void main(String[] args) {
+        int[] down = new int[] {3, 2, 1, 4, 5, 6};
+        down = downUpMerge(down);
+        System.out.println(Arrays.toString(down));
+    }
+
+    static int[] downUpMerge(int[] arr) {
         int n = arr.length / 2;
 
-        int[] sortedArr = new Array[arr.length];
-        for(int i = n - 1; i <=0; i--;) {
-            sortedArr[n - 1 - i] = arr[i];
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (i < arr.length / 2) {
+                result[i] = arr[n - 1 - i];
+            } else {
+                result[i] = arr[i];
+            }
         }
-        for(int i = n; i < arr.length; i++) {
-            sortedArr[n + i] = arr[i];
-        }
-        return sortedArr;
+        return result;
     }
 }
